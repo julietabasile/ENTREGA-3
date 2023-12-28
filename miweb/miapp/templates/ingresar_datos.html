@@ -1,0 +1,16 @@
+<!-- miapp/templates/miapp/ingresar_datos.html -->
+
+{% extends 'miapp/base.html' %}
+
+{% block title %}Ingresar Datos - Mi Web Django{% endblock %}
+
+{% block content %}
+<h2>Ingresar Datos</h2>
+<form method="post" action="{% url 'ingresar_datos' %}">
+    {% csrf_token %}
+    {{ estudiante_form.as_p }}
+    {{ profesor_form.as_p }}
+    {{ curso_form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}
